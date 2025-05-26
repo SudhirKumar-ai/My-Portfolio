@@ -962,7 +962,7 @@ header ul a:hover{
         left: 30%;
     }
 }
-
+/*
 @media screen and (max-width: 700px){
     header {
         position: fixed;
@@ -1121,6 +1121,59 @@ header ul a:hover{
         margin-left: -90px;
     }
 }
+*/
+@media screen and (max-width: 700px) {
+  body {
+    background-color: #000022 !important;
+    color: #eeeeee !important;
+  }
+
+  .hero-info-title,
+  .hero-info p,
+  .hero-info h1,
+  .contact-box p,
+  .card h1,
+  .card p {
+    color: #ffffff !important;
+    text-shadow: 0 0 2px #000000;
+  }
+
+  .hero-info {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .scroll-down {
+    border-color: #ffffff;
+  }
+
+  .scroll-down::before,
+  .scroll-down::after {
+    border-color: #ffffff;
+  }
+
+  header {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    box-shadow: none;
+  }
+
+  .btn,
+  .hero-info button,
+  .contact-box button {
+    background-color: #1e1e1e !important;
+    color: white !important;
+    border: 1px solid #72a1de81 !important;
+  }
+
+  .btn:hover,
+  .hero-info button:hover,
+  .contact-box button:hover {
+    box-shadow: 0 0 8px #72a1de;
+    opacity: 1;
+  }
+}
+
 
 
 @media screen and (max-width: 480px) {
