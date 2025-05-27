@@ -13,19 +13,30 @@ const hoverSign = document.querySelector('.hover-sign');
 const videoList = [video1, video2, video3].filter(video => video !== null);
 
 if (hoverSign && videoList.length > 0) {
-    videoList.forEach(function(video) {
-        video.muted = true;
-        video.addEventListener("mouseover", function() {
-            video.play();
-            hoverSign.classList.add("active");
-        });
-        video.addEventListener("mouseout", function() {
-            video.pause();
-            hoverSign.classList.remove("active");
-        });
+  videoList.forEach(function (video) {
+    video.muted = true;
+
+    // Desktop hover
+    video.addEventListener("mouseenter", function () {
+      video.play().catch(err => {
+        console.warn("Autoplay blocked:", err);
+      });
+      hoverSign.classList.add("active");
     });
+
+    video.addEventListener("mouseleave", function () {
+      video.pause();
+      hoverSign.classList.remove("active");
+    });
+
+    // Mobile tap
+    video.addEventListener("touchstart", function () {
+      video.play().catch(() => {});
+      hoverSign.classList.add("active");
+    });
+  });
 } else {
-    console.error("Hover sign or video elements are missing in the DOM.");
+  console.error("Hover sign or video elements are missing in the DOM");
 }
 
 
